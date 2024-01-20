@@ -11,6 +11,8 @@ public class Order {
         // TODO
         orderItemList = new ArrayList<>();
         setOrderNumber(totalOrderCount + 1);
+        setTotalOrderCount(1);
+        setOrderNumber(0);
     }
 
 
@@ -21,20 +23,24 @@ public class Order {
         // and return that orderItem
 
         // else create new orderItem with given item and amount, then return the new orderItem
-        for (OrderItem findItem : orderItemList){
-            if(findItem.getItem().getName().equals(item.getName())){
-                findItem.setItemAmount(totalOrderCount + amount);
-                return findItem;
+        boolean check = false;
+        for (OrderItem findItem : orderItemList) {
+            if (findItem.getItem().getName().equals(item.getName())) {
+                findItem.increaseItemAmount(amount);
+                check = true;
             }
         }
-            return new OrderItem(item , amount);
+        if(!check)
+            orderItemList.add(new OrderItem(item , amount));
+
+        return new OrderItem(item, amount);
     }
 
     public int calculateOrderTotalPrice() {
         // TODO
         // Calculate total price of the order by summing total price of each orderItem in orderItemList
         int total = 0;
-        for(OrderItem eachItem : orderItemList){
+        for (OrderItem eachItem : orderItemList) {
             total += (eachItem.getItemAmount() * eachItem.getItem().getPricePerPiece());
         }
         return total;
