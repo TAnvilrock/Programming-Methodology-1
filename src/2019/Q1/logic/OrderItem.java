@@ -6,16 +6,19 @@ public class OrderItem {
     private Item item;
     private int itemAmount;
 
-    public OrderItem(Item item, int itemAmount){
+    public OrderItem(Item item, int itemAmount) {
         setItem(item);
         setItemAmount(itemAmount);
     }
-    public void increaseItemAmount(int amount){
-        setItemAmount(getItemAmount() + Math.max(0,amount));
+
+    public void increaseItemAmount(int amount) {
+        setItemAmount(getItemAmount() + Math.max(0, amount));
     }
-    public int calculateTotalPrice(){
+
+    public int calculateTotalPrice() {
         return getItemAmount() * getItem().getPricePerPiece();
     }
+
     public Item getItem() {
         return item;
     }
@@ -29,6 +32,6 @@ public class OrderItem {
     }
 
     public void setItemAmount(int itemAmount) {
-        this.itemAmount = Math.max(0 , itemAmount);
+        this.itemAmount = Math.max(0, itemAmount);
     }
 }
