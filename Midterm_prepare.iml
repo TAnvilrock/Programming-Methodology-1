@@ -4,12 +4,13 @@
     <exclude-output />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/src/2019/Q1/test" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/src/2019/Q1" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/src/2019/Q2" />
+      <sourceFolder url="file://$MODULE_DIR$/src/2019/Q2" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/src/2019/Q2/test" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/src/2020" />
       <excludeFolder url="file://$MODULE_DIR$/src/2021" />
       <excludeFolder url="file://$MODULE_DIR$/src/2019/Solution" />
+      <excludeFolder url="file://$MODULE_DIR$/src/2019/Q1" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
