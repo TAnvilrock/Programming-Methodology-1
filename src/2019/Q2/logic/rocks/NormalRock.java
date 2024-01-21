@@ -5,7 +5,7 @@ import logic.zombies.Zombie;
 public class NormalRock {
     protected int damage;
 
-    NormalRock(int damage) {
+    public NormalRock(int damage) {
         setDamage(damage);
     }
 
@@ -13,7 +13,8 @@ public class NormalRock {
         if (zombie.getDefense() >= damage)
             return 0;
         else
-            return zombie.getDefense() + zombie.getHealth() - damage;
+            zombie.setHealth(Math.max(0, zombie.getHealth() - Math.abs(zombie.getDefense() - damage)));
+        return Math.min(Math.abs(zombie.getDefense() - damage), damage);
     }
 
     @Override

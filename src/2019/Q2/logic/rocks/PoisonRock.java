@@ -12,8 +12,8 @@ public class PoisonRock extends NormalRock {
 
     @Override
     public int dealDamage(Zombie zombie) {
-        zombie.setDecay(damageOverTime);
-        return Math.max(0 ,  damage - zombie.getDefense() );
+        zombie.setDecay(damageOverTime + zombie.getDecay());
+        return super.dealDamage(zombie);
     }
 
     @Override
