@@ -2,15 +2,15 @@ package logic;
 
 public class EnterProfile {
     private Person person;
-    private int bodyTemperatureBody;
+    private int bodyTemperature;
 
-    public EnterProfile(Person person, int bodyTemperatureBody) {
+    public EnterProfile(Person person, int bodyTemperature) {
         setPerson(person);
-        setBodyTemperatureBody(bodyTemperatureBody);
+        setBodyTemperature(bodyTemperature);
     }
 
     public boolean hasFever() {
-        return bodyTemperatureBody >= 37;
+        return bodyTemperature >= 37;
     }
 
     public Person getPerson() {
@@ -21,11 +21,11 @@ public class EnterProfile {
         this.person = person;
     }
 
-    public int getBodyTemperatureBody() {
-        return bodyTemperatureBody;
+    public int getBodyTemperature() {
+        return bodyTemperature;
     }
 
-    public void setBodyTemperatureBody(int bodyTemperatureBody) {
-        this.bodyTemperatureBody = Math.max(35 , Math.min(bodyTemperatureBody , 42));
+    public void setBodyTemperature(int bodyTemperatureBody) {
+        this.bodyTemperature = Math.max(35 , Math.min(bodyTemperatureBody , 42));
     }
 }

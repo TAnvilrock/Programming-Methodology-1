@@ -71,10 +71,11 @@ public class Monster {
 	}
 
 	public int takeDamage(Attack attack) {
-		/*FILL CODE*/
-		
-		
-		return 0;
+		setHp(getHp() - attack.calculateDamage(this));
+		if(getHp() <= 0 )
+			setDead(true);
+
+		return attack.calculateDamage(this);
 	}
 
 	public boolean isDead() {

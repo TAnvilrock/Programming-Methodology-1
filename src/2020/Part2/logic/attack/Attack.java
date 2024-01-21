@@ -39,9 +39,7 @@ public class Attack {
 
 	public int calculateDamage(Monster target) {
 		/*FILL CODE*/
-		
-		
-		return 0;
+		return Math.max(0 , getPower() - target.getDefense());
 	}
 	
 	@Override
